@@ -407,7 +407,7 @@ func isAlgoCompatible(algo string, pubKeyFormat string, sigFormat string) bool {
 	// A server MAY, but is not required to, accept this variant or another variant that
 	// corresponds to a good-faith implementation and is considered safe to
 	// accept.
-	compatibleAlgos := algorithmsForKeyFormat(pubKeyFormat)
+	compatibleAlgos := algorithmsForKeyFormat(underlyingAlgo(pubKeyFormat))
 	if contains(compatibleAlgos, algo) && contains(compatibleAlgos, sigFormat) {
 		return true
 	}
